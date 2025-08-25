@@ -1,5 +1,6 @@
 # Modelos SQLAlchemy para o mini-sistema web
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -20,8 +21,4 @@ class Aluno(Base):
     status = Column(String(10), nullable=False, default="ativo")
     turma_id = Column(Integer, ForeignKey('turmas.id'), nullable=True)
     turma = relationship("Turma", back_populates="alunos")
-class Usuario(Base):
-    __tablename__ = 'usuarios'
-    id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String, nullable=False)
-    email = Column(String, unique=True, nullable=False)
+ 
