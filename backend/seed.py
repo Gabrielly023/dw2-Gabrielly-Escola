@@ -1,10 +1,10 @@
-from pathlib import Path
-import sys
-ROOT = Path(__file__).resolve().parent
-sys.path.append(str(ROOT))
-
-from database import SessionLocal
-from models import Aluno, Turma
+try:
+	from backend.database import SessionLocal
+	from backend.models import Aluno, Turma
+except Exception:
+	# allow running directly as script (python backend/seed.py)
+	from database import SessionLocal
+	from models import Aluno, Turma
 from datetime import date
 
 

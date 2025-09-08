@@ -14,3 +14,12 @@ Content-Type: application/json
   "email": "teste.api@escola.local",
   "status": "ativo"
 }
+
+### Exportar alunos CSV
+GET http://localhost:8000/alunos/export?format=csv
+
+### Exportar alunos JSON
+GET http://localhost:8000/alunos/export?format=json
+
+### Matricular aluno (exemplo)
+POST http://localhost:8000/matriculas?aluno_id=1&turma_id=1
