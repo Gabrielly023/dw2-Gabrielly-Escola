@@ -1,0 +1,16 @@
+### Testar health
+GET http://localhost:8000/health
+
+### Listar alunos
+GET http://localhost:8000/alunos
+
+### Criar aluno
+POST http://localhost:8000/alunos
+Content-Type: application/json
+
+{
+  "nome": "Teste API",
+  "data_nascimento": "2010-03-10",
+  "email": "teste.api@escola.local",
+  "status": "ativo"
+}
