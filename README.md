@@ -1,21 +1,25 @@
 # dw2-Gabrielly-Escola
 
-Mini sistema escola — frontend em HTML/CSS/JS e backend em FastAPI + SQLite.
+Mini-sistema "Escola" - template mínimo criado para o exercício.
 
-Estrutura esperada:
-- frontend/
-  - index.html
-  - styles.css
-  - scripts.js
-- backend/
-  - app.py
-  - models.py
-  - database.py
-  - seed.py
-  - requirements.txt
+Como rodar (exemplo):
 
-Para rodar:
-1. pip install -r backend/requirements.txt
-2. python backend/seed.py
-3. uvicorn backend.app:app --reload
-4. Abrir frontend/index.html
+1. Instalar dependências:
+
+```
+pip install -r backend/requirements.txt
+```
+
+2. Popular o banco (opcional):
+
+```
+python backend/seed.py
+```
+
+3. Iniciar API:
+
+```
+uvicorn backend.app:app --reload
+```
+
+Abra `frontend/index.html` no navegador.

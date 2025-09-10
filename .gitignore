@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-backend/app.db
-env/
-.venv/
-/.vscode/
-node_modules/
