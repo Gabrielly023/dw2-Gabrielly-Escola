@@ -1,27 +1,16 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import List, Optional
 
+# Criar instância do FastAPI
 app = FastAPI()
 
-
-class Aluno(BaseModel):
-	id: int
-	nome: str
-	status: Optional[str] = 'inativo'
-
-
+# Endpoint GET /health
 @app.get('/health')
 def health():
-	return {'status': 'ok'}
+    return {"status": "ok"}
 
-
-@app.get('/alunos', response_model=List[Aluno])
-def listar_alunos():
-	# retorno estático mínimo para template
-	return [
-		{'id': 1, 'nome': 'Ana Silva', 'status': 'ativo'},
-		{'id': 2, 'nome': 'Bruno Costa', 'status': 'inativo'},
-	]
+# Configuração para rodar com uvicorn
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
 
 
